@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 
   <script type="application/ld+json">
   {
@@ -38,7 +38,7 @@
   }
   </script>
 </head>
-<body>
+<body class="is-home">
   <canvas id="grove-dust" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -48,82 +48,78 @@
         <span></span><span></span>
       </button>
       <nav id="site-nav" class="nav-links" aria-label="Primary">
-        <a class="is-active" href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Notes</a><a href="experience.html">Work</a><a href="also.html">Also</a><a class="nav-cta" href="assets/Priyank_Jayraj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="is-active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Notes</a>
+        <a href="experience.html">Work</a>
+        <a href="also.html">Also</a>
+        <a class="nav-cta" href="assets/Priyank_Jayraj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
     </div>
   </header>
-  <figure class="hero">
-    <img src="assets/grove-banner.jpg" alt="A dusk forest grove with kadamba trees, a river, and a peacock on the bank." width="1920" height="1080">
-  </figure>
-  <main id="main" class="journal">
-    <img class="grove-mark grove-mark--peacock" src="assets/peacock.svg" alt="">
-    <img class="grove-mark grove-mark--swan" src="assets/swan.svg" alt="">
-    <header class="masthead">
-      <div class="author">
-        <span class="pfp-frame">
-          <img class="pfp" src="assets/photo.jpg" alt="Priyank Jayraj" width="640" height="640">
-        </span>
-        <div>
-          <p class="kicker">A personal journal</p>
-          <h1>Priyank Jayraj</h1>
-          <p class="role">PhD research scholar · BITS Pilani</p>
-        </div>
-      </div>
-      <p class="lede">
-        I work on information retrieval and applied machine learning.
-        The systems I care about have to hold up under real constraints:
-        latency budgets, messy documents, and languages most models barely see.
-        Right now that work is for tribal welfare communication in India.
-      </p>
-      <p class="byline">Pilani · CSIS · Ministry of Tribal Affairs</p>
-      <p class="masthead-links">
-        <a href="mailto:jairajpriyank@gmail.com">Email</a>
-        <a href="assets/Priyank_Jayraj_Resume.pdf">Resume</a>
-        <a href="https://github.com/skcpda">GitHub</a>
-        <a href="https://www.linkedin.com/in/priyank-jayraj-4380b4178/">LinkedIn</a>
-        <a href="https://orcid.org/0009-0001-1670-1931">ORCID</a>
-      </p>
-    </header>
 
+  <section class="cover" aria-label="Introduction">
+    <img class="cover-art" src="assets/grove-banner.jpg" alt="A dusk forest grove with kadamba trees, a river, and a peacock on the bank." width="1920" height="1080">
+    <div class="cover-shade"></div>
+    <div class="cover-copy">
+      <span class="pfp-frame cover-pfp">
+        <img class="pfp" src="assets/photo.jpg" alt="Priyank Jayraj" width="640" height="640">
+      </span>
+      <div class="cover-text">
+        <p class="kicker">A personal journal</p>
+        <h1>Priyank Jayraj</h1>
+        <p class="role">PhD research scholar · BITS Pilani</p>
+        <p class="lede">
+          I work on information retrieval and applied machine learning.
+          The systems I care about have to hold up under real constraints:
+          latency budgets, messy documents, and languages most models barely see.
+        </p>
+        <p class="byline">Pilani · CSIS · Ministry of Tribal Affairs</p>
+        <p class="masthead-links">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="mailto:jairajpriyank@gmail.com">Email</a>
+          <a href="https://github.com/skcpda">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="journal journal--home">
     <section class="entry">
       <header class="entry-head">
-        <p class="idx">Chapters</p>
-        <h2>Open a page</h2>
+        <p class="idx">On the bench</p>
+        <h2>Current work</h2>
       </header>
-      <div class="chapter-grid">
-        <a class="chapter reveal" href="about.html">
-          <p class="idx">01</p>
-          <h3>About</h3>
-          <p>Industry first, then a PhD. The production instincts stayed.</p>
-        </a>
-        <a class="chapter reveal reveal-2" href="research.html">
-          <p class="idx">02</p>
-          <h3>Research</h3>
-          <p>Retrieval, RAG, and culturally faithful generation for tribal welfare.</p>
-        </a>
-        <a class="chapter reveal reveal-3" href="publications.html">
-          <p class="idx">03</p>
-          <h3>Notes</h3>
-          <p>Accepted papers at CIKM 2026 and DSAA 2026.</p>
-        </a>
-        <a class="chapter reveal" href="experience.html">
-          <p class="idx">04</p>
-          <h3>Work</h3>
-          <p>Microsoft, ShareChat, and PowerUp Money.</p>
-        </a>
-        <a class="chapter reveal reveal-2" href="also.html">
-          <p class="idx">05</p>
-          <h3>Also</h3>
-          <p>Teaching, ICPC, and the rest of the grove.</p>
-        </a>
-        <a class="chapter reveal reveal-3" href="assets/Priyank_Jayraj_Resume.pdf">
-          <p class="idx">CV</p>
-          <h3>Resume</h3>
-          <p>One page, current as of 2026.</p>
-        </a>
+      <p class="dek">
+        Welfare-scheme documents turned into retrieval systems that low-resource
+        language communities can actually use, culturally faithful, not just translated.
+      </p>
+      <div class="note-grid">
+        <article class="note reveal">
+          <p class="note-kicker">Retrieval · graphs</p>
+          <h3><a href="research.html">CTU-FlowRAG</a></h3>
+          <p>Role-conditioned retrieval over typed sentence graphs, so a welfare document can be queried by the role the reader cares about.</p>
+          <p class="facts">0.82 nDCG@10 · 3,048 documents</p>
+        </article>
+        <article class="note reveal reveal-2">
+          <p class="note-kicker">Culture · RAG</p>
+          <h3><a href="research.html">QCCAF</a></h3>
+          <p>Query-conditioned fusion that adds local cultural context before image prompts are written. Zero-shot across related languages.</p>
+          <p class="facts">0.93 nDCG@10 on Santali</p>
+        </article>
+        <article class="note reveal reveal-3">
+          <p class="note-kicker">Latency · bandits</p>
+          <h3><a href="research.html">Bandit-Quota</a></h3>
+          <p>A latency-budgeted contextual bandit for per-query retriever selection. Match an ensemble when you can afford it.</p>
+          <p class="facts">2.4x to 9.3x faster than full ensemble</p>
+        </article>
       </div>
+      <p class="continue"><a href="research.html">The full research notes</a> · <a href="publications.html">Accepted papers</a></p>
     </section>
   </main>
+
   <footer class="site-footer" id="contact">
     <div class="footer-copy">
       <p class="kicker">Get in touch</p>
@@ -141,6 +137,6 @@
       <p class="copyright">© <span id="year">2026</span> Priyank Jayraj</p>
     </div>
   </footer>
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>

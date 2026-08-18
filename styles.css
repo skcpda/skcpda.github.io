@@ -77,6 +77,25 @@ a:hover {
   border-bottom: 1px solid var(--gold);
 }
 
+.is-home .site-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(11, 28, 22, 0.62), rgba(11, 28, 22, 0));
+  border-bottom: 0;
+}
+
+.is-home .site-header.is-scrolled,
+.is-home .site-header:has(.nav-links.is-open) {
+  position: fixed;
+  background: rgba(11, 28, 22, 0.94);
+  border-bottom: 1px solid var(--gold);
+}
+
+.is-home .cover {
+  min-height: 100svh;
+}
+
 .header-inner {
   width: min(var(--journal), calc(100% - 2rem));
   margin: 0 auto;
@@ -137,6 +156,94 @@ a:hover {
   height: 1.5px;
   margin: 6px 4px;
   background: #f4ead3;
+}
+
+.cover {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100svh - var(--header));
+  overflow: hidden;
+  border-bottom: 1px solid var(--gold);
+}
+
+.cover-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 36% 48%;
+  animation: kenburns 32s ease-in-out infinite alternate;
+}
+
+.cover-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(8, 16, 12, 0.08) 0%, rgba(8, 16, 12, 0.12) 36%, rgba(8, 16, 12, 0.62) 64%, rgba(8, 16, 12, 0.78) 100%),
+    linear-gradient(to top, rgba(8, 16, 12, 0.72) 0%, rgba(8, 16, 12, 0.18) 42%, transparent 62%);
+}
+
+.cover-copy {
+  position: absolute;
+  right: max(1.4rem, calc((100% - var(--journal)) / 2));
+  bottom: 9%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 34rem);
+  gap: 1.2rem 1.4rem;
+  align-items: end;
+  max-width: min(46rem, calc(100% - 2.4rem));
+  color: #f4ead3;
+}
+
+.cover-pfp {
+  width: 108px;
+  height: 108px;
+  background: rgba(11, 28, 22, 0.35);
+  box-shadow: 0 0 0 1px var(--gold), 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.cover .kicker {
+  color: var(--gold);
+}
+
+.cover h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-weight: 600;
+  line-height: 0.95;
+  color: #f7efe0;
+  text-shadow: 0 2px 24px rgba(8, 16, 12, 0.45);
+}
+
+.cover .role,
+.cover .byline {
+  color: #d8c9a6;
+}
+
+.cover .lede {
+  margin: 0.85rem 0 0.7rem;
+  max-width: 34rem;
+  color: #efe6d2;
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+
+.cover .masthead-links a {
+  color: #f4ead3;
+  border-color: rgba(201, 162, 39, 0.7);
+  background: rgba(11, 28, 22, 0.38);
+}
+
+.cover .masthead-links a:hover {
+  background: rgba(201, 162, 39, 0.18);
+  border-color: var(--gold);
+}
+
+.journal--home {
+  min-height: 0;
+  margin-top: 1.4rem;
 }
 
 .hero {
@@ -371,6 +478,15 @@ blockquote {
   color: var(--leaf);
 }
 
+.note h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.note h3 a:hover {
+  color: var(--peacock);
+}
+
 .note h3,
 .job h3,
 .pubs h3 {
@@ -545,6 +661,32 @@ blockquote {
 
   .hero {
     height: 200px;
+  }
+
+  .cover {
+    min-height: 100svh;
+  }
+
+  .cover-copy {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.25rem;
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .cover-pfp {
+    width: 84px;
+    height: 84px;
+  }
+
+  .cover .lede {
+    font-size: 1rem;
+  }
+
+  .cover-shade {
+    background:
+      linear-gradient(to top, rgba(8, 16, 12, 0.88) 0%, rgba(8, 16, 12, 0.45) 46%, rgba(8, 16, 12, 0.18) 100%);
   }
 
   .masthead,
@@ -858,6 +1000,7 @@ blockquote {
   }
 
   .hero img,
+  .cover-art,
   .journal,
   .grove-mark,
   .pfp-frame,
