@@ -567,6 +567,287 @@ blockquote {
   }
 }
 
+#grove-dust {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.site-header,
+.hero,
+.journal,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  z-index: 10;
+}
+
+.hero img {
+  animation: kenburns 28s ease-in-out infinite alternate;
+}
+
+.hero--compact {
+  height: min(28vw, 168px);
+}
+
+.journal {
+  animation: journal-open 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.grove-mark {
+  position: absolute;
+  width: 7.5rem;
+  opacity: 0.14;
+  pointer-events: none;
+  animation: sway 7s ease-in-out infinite;
+}
+
+.grove-mark--peacock {
+  top: 1.2rem;
+  right: 1.4rem;
+}
+
+.grove-mark--swan {
+  bottom: 1.4rem;
+  left: 1.2rem;
+  width: 6.2rem;
+  animation-delay: -2.4s;
+}
+
+.journal {
+  position: relative;
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.28rem;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+.nav-cta {
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--night) !important;
+  box-shadow: 0 0 16px rgba(201, 162, 39, 0.35);
+}
+
+.pfp-frame {
+  animation: glow-ring 4.8s ease-in-out infinite;
+}
+
+.masthead-links a {
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.masthead-links a:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  background: #fff8e6;
+}
+
+.note,
+.job,
+.pubs li,
+.pub-card {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.note:hover,
+.pub-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 24px rgba(11, 28, 22, 0.1);
+}
+
+.continue {
+  margin: 1.1rem 0 0;
+  font-family: var(--ui);
+  font-size: 0.82rem;
+}
+
+.continue a {
+  color: var(--leaf);
+}
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.chapter {
+  display: block;
+  padding: 1rem 1rem 1.05rem;
+  color: inherit;
+  text-decoration: none;
+  background: #fbf6e8;
+  border: 1px solid var(--line);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chapter:hover {
+  color: inherit;
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 24px rgba(11, 28, 22, 0.1);
+}
+
+.chapter .idx {
+  margin-bottom: 0.35rem;
+}
+
+.chapter h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--display);
+  font-size: 1.28rem;
+}
+
+.chapter p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.pub-card {
+  margin: 0 0 0.9rem;
+  padding: 1rem 1.05rem 1.05rem;
+  background: #fbf6e8;
+  border: 1px solid var(--line);
+}
+
+.pub-card h3 {
+  margin: 0.35rem 0 0.35rem;
+  font-family: var(--display);
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.pub-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pub-card h3 a:hover {
+  color: var(--peacock);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border: 1px solid var(--gold);
+  color: var(--leaf);
+  font-family: var(--ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  background: rgba(201, 162, 39, 0.08);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--night);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.reveal.is-in {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-2 { animation-delay: 0.08s; }
+.reveal-3 { animation-delay: 0.16s; }
+.reveal-4 { animation-delay: 0.24s; }
+
+@keyframes kenburns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.08) translate3d(-1.4%, -1.2%, 0); }
+}
+
+@keyframes journal-open {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(-6px); }
+}
+
+@keyframes glow-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.18); }
+  50% { box-shadow: 0 0 0 6px rgba(201, 162, 39, 0); }
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 840px) {
+  .chapter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grove-mark {
+    display: none;
+  }
+
+  .hero--compact {
+    height: 120px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -574,5 +855,23 @@ blockquote {
 
   body {
     background-attachment: scroll;
+  }
+
+  .hero img,
+  .journal,
+  .grove-mark,
+  .pfp-frame,
+  .reveal,
+  .reveal.is-in {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .note:hover,
+  .pub-card:hover,
+  .chapter:hover,
+  .masthead-links a:hover {
+    transform: none;
   }
 }

@@ -9,18 +9,16 @@
   <link rel="canonical" href="https://skcpda.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1c16">
-
   <meta property="og:type" content="website">
   <meta property="og:title" content="Priyank Jayraj | Information Retrieval &amp; Applied ML">
   <meta property="og:description" content="PhD researcher at BITS Pilani. Retrieval, RAG, and applied ML for low-resource language communities. Previously Microsoft, ShareChat, and PowerUp Money.">
   <meta property="og:url" content="https://skcpda.github.io/">
   <meta property="og:image" content="https://skcpda.github.io/assets/grove-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 
   <script type="application/ld+json">
   {
@@ -41,30 +39,25 @@
   </script>
 </head>
 <body>
+  <canvas id="grove-dust" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#top">Priyank Jayraj</a>
+      <a class="brand" href="index.html">Priyank Jayraj</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span></span><span></span>
       </button>
       <nav id="site-nav" class="nav-links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Notes</a>
-        <a href="#experience">Work</a>
-        <a href="#more">Also</a>
-        <a class="nav-cta" href="assets/Priyank_Jayraj_Resume.pdf">Resume</a>
+        <a class="is-active" href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Notes</a><a href="experience.html">Work</a><a href="also.html">Also</a><a class="nav-cta" href="assets/Priyank_Jayraj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
     </div>
   </header>
-
-  <figure class="hero" id="top">
+  <figure class="hero">
     <img src="assets/grove-banner.jpg" alt="A dusk forest grove with kadamba trees, a river, and a peacock on the bank." width="1920" height="1080">
   </figure>
-
   <main id="main" class="journal">
+    <img class="grove-mark grove-mark--peacock" src="assets/peacock.svg" alt="">
+    <img class="grove-mark grove-mark--swan" src="assets/swan.svg" alt="">
     <header class="masthead">
       <div class="author">
         <span class="pfp-frame">
@@ -92,208 +85,45 @@
       </p>
     </header>
 
-    <section class="entry" id="about">
+    <section class="entry">
       <header class="entry-head">
-        <p class="idx">01</p>
-        <h2>About</h2>
+        <p class="idx">Chapters</p>
+        <h2>Open a page</h2>
       </header>
-      <div class="prose">
-      <p>
-        I am a PhD student in Computer Science at BITS Pilani, in work with
-        <strong>Poonam Goyal</strong> and <strong>Navneet Goyal</strong>.
-        My research sits at the intersection of information retrieval,
-        retrieval-augmented generation, and applied ML, with a particular
-        interest in systems that have to be both accurate and kind to the people who use them.
-      </p>
-      <p>
-        Before I came back to campus, I spent a few years as a software engineer in Bengaluru.
-        I built payment and gaming backends at ShareChat, owned credit-card decisioning services
-        at PowerUp Money (formerly UniCards), and this summer I interned as an Applied Scientist
-        at Microsoft, working on Power Pages adoption and maker experience.
-      </p>
-      <p>
-        The through-line is the same: take a messy real-world problem, find the structure in it,
-        and ship something that holds up in production. I still teach NLP, generative AI, and
-        advanced algorithms, and I still contest-program when I can.
-      </p>
-      <blockquote>
-        Dual degree first: B.E. Mechanical Engineering and M.Sc. Mathematics at BITS,
-        then a turn into industry, then a PhD in CS. The math never really left.
-      </blockquote>
-      </div>
-    </section>
-
-    <section class="entry" id="research">
-      <header class="entry-head">
-        <p class="idx">02</p>
-        <h2>Research</h2>
-      </header>
-      <p class="dek">
-        With the Ministry of Tribal Affairs, I turn welfare-scheme documents into posters
-        and animations that low-resource language communities can actually use,
-        culturally faithful, not just translated.
-      </p>
-
-      <div class="note-grid">
-      <article class="note">
-        <p class="note-kicker">Retrieval · graphs</p>
-        <h3>CTU-FlowRAG</h3>
-        <p>
-          Coherent Thematic Unit segmentation, then role-conditioned retrieval over typed sentence graphs.
-          Built so a welfare document can be queried by the role the reader actually cares about.
-        </p>
-        <p class="facts">0.82 nDCG@10 · 0.75 MRR@10 · 0.96 role coverage · 3,048 documents</p>
-        <p><a href="https://github.com/skcpda/ctu-flowrag">Code on GitHub</a></p>
-      </article>
-
-      <article class="note">
-        <p class="note-kicker">Culture · RAG fusion</p>
-        <h3>QCCAF</h3>
-        <p>
-          A query-conditioned fusion layer that adds local cultural context before image prompts are written.
-          Zero-shot transfer across related low-resource languages, not just the one we trained on.
-        </p>
-        <p class="facts">0.93 nDCG@10 on Santali · zero-shot Khasi, Bodo, Garo</p>
-      </article>
-
-      <article class="note">
-        <p class="note-kicker">Latency · bandits</p>
-        <h3>Bandit-Quota</h3>
-        <p>
-          A latency-budgeted contextual bandit for per-query retriever selection.
-          Match an ensemble when you can afford it; skip the rest when you cannot.
-        </p>
-        <p class="facts">2.4x to 9.3x faster than full ensemble · quality match or better on 6 of 7 BEIR datasets</p>
-        <p><a href="https://github.com/skcpda/bandit-quota">Code on GitHub</a></p>
-      </article>
-      </div>
-    </section>
-
-    <section class="entry" id="publications">
-      <header class="entry-head">
-        <p class="idx">03</p>
-        <h2>Publications</h2>
-      </header>
-      <ol class="pubs">
-        <li>
-          <p class="pub-venue">CIKM 2026 · Accepted</p>
-          <h3>Bandit-Quota: Multi-Retriever Selection under Latency Budgets via Contextual Thompson Sampling</h3>
-          <p class="pub-authors">Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
-          <p class="pub-place">ACM International Conference on Information and Knowledge Management</p>
-        </li>
-        <li>
-          <p class="pub-venue">DSAA 2026 · Accepted</p>
-          <h3>Role-Conditioned Structured Retrieval on Typed Sentence Graphs for Welfare-Policy Documents</h3>
-          <p class="pub-authors">Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
-          <p class="pub-place">IEEE International Conference on Data Science and Advanced Analytics</p>
-        </li>
-        <li>
-          <p class="pub-venue">DSAA 2026 · Accepted</p>
-          <h3>QCCAF: A Cultural Retrieval Benchmark and Query-Adaptive Fusion for Tribal Welfare Communication</h3>
-          <p class="pub-authors">Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
-          <p class="pub-place">IEEE International Conference on Data Science and Advanced Analytics</p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="entry" id="experience">
-      <header class="entry-head">
-        <p class="idx">04</p>
-        <h2>Experience</h2>
-      </header>
-      <p class="dek">Industry first, then research. The production instincts stayed.</p>
-
-      <article class="job">
-        <header>
-          <h3>Microsoft</h3>
-          <p>Applied Scientist Intern · Jun 2026 to Aug 2026 · Bengaluru</p>
-        </header>
-        <ul>
-          <li>Mapped the Power Pages maker journey across Studio, CLI, and VS Code. Isolated friction and drop-off, then turned those findings into action items for product and engineering.</li>
-          <li>Built live dashboards so the intelligence team can see production numbers on performance and ease of use.</li>
-          <li>Built a CatBoost model scoring Dynamics 365 customers for Power Pages adoption from revenue, industry, and usage. Recovered <strong>88.5%</strong> of true natural adopters on a held-out set for sales outreach.</li>
-        </ul>
-      </article>
-
-      <article class="job">
-        <header>
-          <h3>ShareChat</h3>
-          <p>Software Development Engineer I · Jan 2022 to Aug 2023 · Bengaluru</p>
-        </header>
-        <ul>
-          <li>Built and ran backend systems (REST APIs, services, and job schedulers) for payments and gaming. Co-owned 6 to 8 production microservices.</li>
-          <li>Cut infrastructure cost with a custom GCP Pub/Sub wrapper and compression on high-volume event streams.</li>
-          <li>Used Pub/Sub, Cloud Functions, Cloud Scheduler, and the wider GCP stack to keep backend operations moving.</li>
-          <li>Gave organization-wide engineering talks after finding high-leverage optimizations in web-service log streams.</li>
-        </ul>
-      </article>
-
-      <article class="job">
-        <header>
-          <h3>PowerUp Money</h3>
-          <p>Software Development Engineer I · formerly UniCards · May 2021 to Jan 2022 · Bengaluru</p>
-        </header>
-        <ul>
-          <li>Built backend systems on AWS (REST APIs, services, and schedulers) for core product features.</li>
-          <li>Owned key microservices on credit-card decisioning and risk/fraud detection.</li>
-          <li>Joined in a very early phase of the startup and often shipped several features in a day.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="entry" id="more">
-      <header class="entry-head">
-        <p class="idx">05</p>
-        <h2>Also</h2>
-      </header>
-
-      <div class="also-grid">
-      <article class="note">
-        <h3>Teaching</h3>
-        <p class="facts">Teaching Assistant · CSIS, BITS Pilani · Aug 2023 to Present</p>
-        <p>Helped design courses and ran lectures and labs for NLP, Generative AI, and Advanced Algorithms.</p>
-      </article>
-
-      <article class="note">
-        <h3>Education</h3>
-        <ul>
-          <li><strong>Ph.D., Computer Science &amp; Information Systems</strong>, BITS Pilani · GPA 9.03/10 · Aug 2023 to Present</li>
-          <li><strong>B.E. Mechanical Engineering &amp; M.Sc. Mathematics</strong>, BITS Pilani · Aug 2016 to May 2021</li>
-          <li>IBM Certified Data Science Professional</li>
-        </ul>
-      </article>
-
-      <article class="note">
-        <h3>Competitive programming</h3>
-        <p>Codeforces <strong>1813</strong> · CodeChef <strong>2051</strong> · 1000+ problems solved.</p>
-        <p class="facts">ACM ICPC</p>
-        <ul class="icpc">
-          <li>2021 India online: 52</li>
-          <li>2021 Asia Pune: 142</li>
-          <li>2020 Asia Kanpur: 52</li>
-          <li>2020 India online: 214</li>
-          <li>2019 Asia Kharagpur: 54</li>
-          <li>2019 Asia Kanpur: 36</li>
-          <li>2019 India online: 80</li>
-        </ul>
-      </article>
-
-      <article class="note">
-        <h3>Skills</h3>
-        <p><strong>Languages.</strong> Python, C/C++ · Java (Spring Boot), JavaScript (Node.js)</p>
-        <p><strong>ML / IR.</strong> PyTorch, TensorFlow, CatBoost, LangGraph, Guardrails, LLMs, RAG, GNNs</p>
-        <p><strong>Systems.</strong> AWS, GCP, Kafka, Airflow, CI/CD, Git</p>
-      </article>
-
-      <article class="note">
-        <h3>Campus</h3>
-        <p>Core team, <strong>BITSACM</strong>. Coordinator, <strong>CPSIG</strong>.</p>
-        <p>I like problems that look like puzzles until they look like systems.</p>
-      </article>
+      <div class="chapter-grid">
+        <a class="chapter reveal" href="about.html">
+          <p class="idx">01</p>
+          <h3>About</h3>
+          <p>Industry first, then a PhD. The production instincts stayed.</p>
+        </a>
+        <a class="chapter reveal reveal-2" href="research.html">
+          <p class="idx">02</p>
+          <h3>Research</h3>
+          <p>Retrieval, RAG, and culturally faithful generation for tribal welfare.</p>
+        </a>
+        <a class="chapter reveal reveal-3" href="publications.html">
+          <p class="idx">03</p>
+          <h3>Notes</h3>
+          <p>Accepted papers at CIKM 2026 and DSAA 2026.</p>
+        </a>
+        <a class="chapter reveal" href="experience.html">
+          <p class="idx">04</p>
+          <h3>Work</h3>
+          <p>Microsoft, ShareChat, and PowerUp Money.</p>
+        </a>
+        <a class="chapter reveal reveal-2" href="also.html">
+          <p class="idx">05</p>
+          <h3>Also</h3>
+          <p>Teaching, ICPC, and the rest of the grove.</p>
+        </a>
+        <a class="chapter reveal reveal-3" href="assets/Priyank_Jayraj_Resume.pdf">
+          <p class="idx">CV</p>
+          <h3>Resume</h3>
+          <p>One page, current as of 2026.</p>
+        </a>
       </div>
     </section>
   </main>
-
   <footer class="site-footer" id="contact">
     <div class="footer-copy">
       <p class="kicker">Get in touch</p>
@@ -311,7 +141,6 @@
       <p class="copyright">© <span id="year">2026</span> Priyank Jayraj</p>
     </div>
   </footer>
-
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>
