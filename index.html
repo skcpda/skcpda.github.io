@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 
   <script type="application/ld+json">
   {
@@ -93,8 +93,11 @@
     </header>
 
     <section class="entry" id="about">
-      <p class="idx">01</p>
-      <h2>About</h2>
+      <header class="entry-head">
+        <p class="idx">01</p>
+        <h2>About</h2>
+      </header>
+      <div class="prose">
       <p>
         I am a PhD student in Computer Science at BITS Pilani, in work with
         <strong>Poonam Goyal</strong> and <strong>Navneet Goyal</strong>.
@@ -117,17 +120,21 @@
         Dual degree first: B.E. Mechanical Engineering and M.Sc. Mathematics at BITS,
         then a turn into industry, then a PhD in CS. The math never really left.
       </blockquote>
+      </div>
     </section>
 
     <section class="entry" id="research">
-      <p class="idx">02</p>
-      <h2>Research</h2>
+      <header class="entry-head">
+        <p class="idx">02</p>
+        <h2>Research</h2>
+      </header>
       <p class="dek">
         With the Ministry of Tribal Affairs, I turn welfare-scheme documents into posters
         and animations that low-resource language communities can actually use —
         culturally faithful, not just translated.
       </p>
 
+      <div class="note-grid">
       <article class="note">
         <p class="note-kicker">Retrieval · graphs</p>
         <h3>CTU-FlowRAG</h3>
@@ -159,36 +166,41 @@
         <p class="facts">2.4–9.3× faster than full ensemble · quality match or better on 6 of 7 BEIR datasets</p>
         <p><a href="https://github.com/skcpda/bandit-quota">Code on GitHub</a></p>
       </article>
+      </div>
     </section>
 
     <section class="entry" id="publications">
-      <p class="idx">03</p>
-      <h2>Publications</h2>
+      <header class="entry-head">
+        <p class="idx">03</p>
+        <h2>Publications</h2>
+      </header>
       <ol class="pubs">
         <li>
           <p class="pub-venue">CIKM 2026 · Accepted</p>
           <h3>Bandit-Quota: Multi-Retriever Selection under Latency Budgets via Contextual Thompson Sampling</h3>
-          <p>Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
+          <p class="pub-authors">Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
           <p class="pub-place">ACM International Conference on Information and Knowledge Management</p>
         </li>
         <li>
           <p class="pub-venue">DSAA 2026 · Accepted</p>
           <h3>Role-Conditioned Structured Retrieval on Typed Sentence Graphs for Welfare-Policy Documents</h3>
-          <p>Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
+          <p class="pub-authors">Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
           <p class="pub-place">IEEE International Conference on Data Science and Advanced Analytics</p>
         </li>
         <li>
           <p class="pub-venue">DSAA 2026 · Accepted</p>
           <h3>QCCAF: A Cultural Retrieval Benchmark and Query-Adaptive Fusion for Tribal Welfare Communication</h3>
-          <p>Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
+          <p class="pub-authors">Priyank Jayraj, Poonam Goyal, Navneet Goyal</p>
           <p class="pub-place">IEEE International Conference on Data Science and Advanced Analytics</p>
         </li>
       </ol>
     </section>
 
     <section class="entry" id="experience">
-      <p class="idx">04</p>
-      <h2>Experience</h2>
+      <header class="entry-head">
+        <p class="idx">04</p>
+        <h2>Experience</h2>
+      </header>
       <p class="dek">Industry first, then research. The production instincts stayed.</p>
 
       <article class="job">
@@ -230,9 +242,12 @@
     </section>
 
     <section class="entry" id="more">
-      <p class="idx">05</p>
-      <h2>Also</h2>
+      <header class="entry-head">
+        <p class="idx">05</p>
+        <h2>Also</h2>
+      </header>
 
+      <div class="also-grid">
       <article class="note">
         <h3>Teaching</h3>
         <p class="facts">Teaching Assistant · CSIS, BITS Pilani · Aug 2023 – Present</p>
@@ -275,6 +290,7 @@
         <p>Core team, <strong>BITSACM</strong>. Coordinator, <strong>CPSIG</strong>.</p>
         <p>I like problems that look like puzzles until they look like systems.</p>
       </article>
+      </div>
     </section>
   </main>
 
