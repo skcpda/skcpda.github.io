@@ -166,6 +166,11 @@ a:hover {
 }
 
 .masthead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 2.2rem;
+  row-gap: 0.45rem;
+  align-items: start;
   padding-bottom: 1.8rem;
   margin-bottom: 0.4rem;
   border-bottom: 1px solid var(--gold);
@@ -175,7 +180,30 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 1.15rem;
-  margin-bottom: 1rem;
+  grid-row: 1 / 4;
+  margin: 0;
+}
+
+.lede {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+
+.byline {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--ui);
+  font-size: 0.78rem;
+}
+
+.masthead-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.55rem;
+  margin: 0;
+  font-family: var(--ui);
+  font-size: 0.78rem;
 }
 
 .pfp-frame {
@@ -218,29 +246,6 @@ a:hover {
   color: var(--muted);
   font-family: var(--ui);
   font-size: 0.8rem;
-}
-
-.lede {
-  max-width: 42rem;
-  margin: 0 0 0.7rem;
-  font-size: 1.06rem;
-  line-height: 1.55;
-}
-
-.byline {
-  margin: 0;
-  color: var(--muted);
-  font-family: var(--ui);
-  font-size: 0.78rem;
-}
-
-.masthead-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.55rem;
-  margin: 0.9rem 0 0;
-  font-family: var(--ui);
-  font-size: 0.78rem;
 }
 
 .masthead-links a {
@@ -290,7 +295,8 @@ a:hover {
 }
 
 .prose {
-  max-width: 42rem;
+  columns: 2;
+  column-gap: 2.4rem;
 }
 
 .prose p {
@@ -298,7 +304,6 @@ a:hover {
 }
 
 .dek {
-  max-width: 42rem;
   margin: 0 0 1rem;
   color: var(--muted);
   font-style: italic;
@@ -314,6 +319,7 @@ blockquote {
   font-size: 1.12rem;
   font-style: italic;
   line-height: 1.4;
+  column-span: all;
 }
 
 .note-grid {
@@ -454,7 +460,6 @@ blockquote {
 
 .pubs h3 {
   font-size: 1.12rem;
-  max-width: 52rem;
 }
 
 .pub-authors,
@@ -542,11 +547,18 @@ blockquote {
     height: 200px;
   }
 
+  .masthead,
   .note-grid,
   .also-grid,
   .job,
-  .icpc {
+  .icpc,
+  .prose {
     grid-template-columns: 1fr;
+    columns: 1;
+  }
+
+  .author {
+    grid-row: auto;
   }
 
   .pfp-frame {
