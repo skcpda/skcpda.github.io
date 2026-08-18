@@ -174,17 +174,17 @@ a:hover {
 .author {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1.15rem;
   margin-bottom: 1rem;
 }
 
 .pfp-frame {
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: 112px;
+  height: 112px;
   flex: 0 0 auto;
-  padding: 2px;
+  padding: 3px;
   background: var(--paper);
   border: 1px solid var(--gold);
 }
@@ -547,6 +547,11 @@ blockquote {
   .job,
   .icpc {
     grid-template-columns: 1fr;
+  }
+
+  .pfp-frame {
+    width: 88px;
+    height: 88px;
   }
 }
 
