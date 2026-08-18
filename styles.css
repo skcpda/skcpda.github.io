@@ -11,7 +11,7 @@
   --serif: "Source Serif 4", Georgia, serif;
   --display: "Cormorant Garamond", Palatino, serif;
   --ui: "Sora", "Avenir Next", sans-serif;
-  --journal: 60rem;
+  --journal: 76rem;
   --header: 3.6rem;
 }
 
@@ -141,7 +141,7 @@ a:hover {
 
 .hero {
   margin: 0;
-  height: min(62vw, 460px);
+  height: min(48vw, 340px);
   overflow: hidden;
   border-bottom: 1px solid var(--gold);
 }
@@ -154,12 +154,17 @@ a:hover {
 }
 
 .journal {
-  width: min(var(--journal), calc(100% - 1.6rem));
-  margin: 2.2rem auto 2.5rem;
-  padding: 2rem 2.4rem 2.4rem;
+  width: min(var(--journal), calc(100% - 1.4rem));
+  margin: 0.85rem auto 2.5rem;
+  padding: 2.6rem 3.2rem 3rem;
+  min-height: 70vh;
   background: var(--paper);
   border: 1px solid var(--gold);
   box-shadow: 0 0 0 6px var(--night), 0 0 0 7px var(--gold);
+}
+
+.masthead {
+  padding-bottom: 1.6rem;
 }
 
 .author {
@@ -396,11 +401,11 @@ blockquote {
   }
 
   .journal {
-    padding: 1.2rem 1rem 1.6rem;
+    padding: 1.3rem 1.05rem 1.7rem;
   }
 
   .hero {
-    height: 220px;
+    height: 200px;
   }
 }
 
