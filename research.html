@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research | Priyank Jayraj</title>
-  <meta name="description" content="Priyank Jayraj is a PhD research scholar at BITS Pilani working on information retrieval, RAG, and applied machine learning, including culturally faithful generation for low-resource language communities.">
+  <meta name="description" content="Research by Priyank Jayraj: NavTree for long-document retrieval, exact unlearning after data curation, and Bandit-Quota for latency-budgeted retriever selection.">
   <meta name="author" content="Priyank Jayraj">
   <link rel="canonical" href="https://skcpda.github.io/research.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1c16">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research | Priyank Jayraj">
-  <meta property="og:description" content="PhD researcher at BITS Pilani. Retrieval, RAG, and applied ML for low-resource language communities. Previously Microsoft, ShareChat, and PowerUp Money.">
+  <meta property="og:description" content="NavTree, exact unlearning after data curation, and Bandit-Quota. Papers from Google Scholar.">
   <meta property="og:url" content="https://skcpda.github.io/research.html">
   <meta property="og:image" content="https://skcpda.github.io/assets/grove-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -46,39 +46,47 @@
         <h2>Research</h2>
       </header>
       <p class="dek reveal">
-        With the Ministry of Tribal Affairs, I turn welfare-scheme documents into posters
-        and animations that low-resource language communities can actually use
-        in a culturally faithful way, not just translated.
+        Three problems, each with a hard constraint.
+        Long documents where flat retrieval clusters in one region.
+        Training pipelines that drop near-duplicates and then have to forget a record exactly.
+        Retriever ensembles that miss the latency budget if every expert runs.
+        These are the recent papers on
+        <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
       </p>
       <div class="note-grid">
-      <article class="note reveal">
-        <p class="note-kicker">Retrieval · graphs</p>
-        <h3>CTU-FlowRAG</h3>
+      <article class="note reveal" id="navtree">
+        <p class="note-kicker">Long documents · retrieval</p>
+        <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">NavTree</a></h3>
         <p>
-          Coherent Thematic Unit segmentation, then role-conditioned retrieval over typed sentence graphs.
-          Built so a welfare document can be queried by the role the reader actually cares about.
+          Summary trees for long-document QA are usually credited to the summaries.
+          NavTree keeps the tree and drops the language model at indexing:
+          a deterministic balanced segment tree over chunks, walked from the retrieved leaves,
+          emitting only raw chunks to the reader.
         </p>
-        <p class="facts">0.82 nDCG@10 · 0.75 MRR@10 · 0.96 role coverage · 3,048 documents</p>
-        <p><a href="https://github.com/skcpda/ctu-flowrag-poster" target="_blank" rel="noopener">Poster on GitHub</a></p>
+        <p class="facts">arXiv:2610.06902 · zero language-model calls at indexing</p>
+        <p><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">Paper</a></p>
       </article>
-      <article class="note reveal reveal-2">
-        <p class="note-kicker">Culture · RAG fusion</p>
-        <h3>QCCAF</h3>
+      <article class="note reveal reveal-2" id="unlearning">
+        <p class="note-kicker">Unlearning · curation</p>
+        <h3><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Exact unlearning after data curation</a></h3>
         <p>
-          A query-conditioned fusion layer that adds local cultural context before image prompts are written.
-          Zero-shot transfer across related low-resource languages, not just the one we trained on.
+          If earlier similar records block later ones, deleting a raw record can admit an example
+          that was excluded before. A limit on future deletions identifies which excluded records
+          can still enter training, and the training summary can be repaired to match a rebuild.
         </p>
-        <p class="facts">0.93 nDCG@10 on Santali · zero-shot Khasi, Bodo, Garo</p>
+        <p class="facts">arXiv:2610.33426 · 13,056 deletion-step checks on 1,001 AskUbuntu records</p>
+        <p><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Paper</a></p>
       </article>
-      <article class="note reveal reveal-3">
+      <article class="note reveal reveal-3" id="bandit">
         <p class="note-kicker">Latency · bandits</p>
-        <h3>Bandit-Quota</h3>
+        <h3><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Bandit-Quota</a></h3>
         <p>
-          A latency-budgeted contextual bandit for per-query retriever selection.
-          Match an ensemble when you can afford it; skip the rest when you cannot.
+          A training-free, per-query selector that picks a budgeted subset of dense retrievers
+          under a wall-clock cap. Linear Thompson sampling over a small query sketch,
+          with a cached fusion fallback when the budget would otherwise slip.
         </p>
-        <p class="facts">2.4x to 9.3x faster than full ensemble · quality match or better on 6 of 7 BEIR datasets</p>
-        <p><a href="https://github.com/skcpda/bandit-quota">Code on GitHub</a></p>
+        <p class="facts">CIKM 2026 · 2.4x to 9.3x faster than a 10-arm ensemble · nDCG@10 match or better on 6 of 7 BEIR datasets</p>
+        <p><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/skcpda/bandit-quota">Code on GitHub</a></p>
       </article>
       </div>
       <p class="continue"><a href="publications.html">Next: Publications →</a></p>
@@ -96,6 +104,7 @@
         <a href="https://github.com/skcpda">GitHub</a>
         <a href="https://www.linkedin.com/in/priyank-jayraj-4380b4178/">LinkedIn</a>
         <a href="https://orcid.org/0009-0001-1670-1931">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a href="assets/Priyank_Jayraj_Resume.pdf">Resume</a>
       </p>
       <p class="copyright">© <span id="year">2026</span> Priyank Jayraj</p>

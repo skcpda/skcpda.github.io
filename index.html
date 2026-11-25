@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Priyank Jayraj | Information Retrieval &amp; Applied ML</title>
-  <meta name="description" content="Priyank Jayraj is a PhD research scholar at BITS Pilani working on information retrieval, RAG, and applied machine learning, including culturally faithful generation for low-resource language communities.">
+  <meta name="description" content="Priyank Jayraj is a PhD research scholar at BITS Pilani working on information retrieval and applied machine learning: long-document retrieval, exact unlearning, and latency-budgeted retriever selection.">
   <meta name="author" content="Priyank Jayraj">
   <link rel="canonical" href="https://skcpda.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0b1c16">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Priyank Jayraj | Information Retrieval &amp; Applied ML">
-  <meta property="og:description" content="PhD researcher at BITS Pilani. Retrieval, RAG, and applied ML for low-resource language communities. Previously Microsoft, ShareChat, and PowerUp Money.">
+  <meta property="og:description" content="PhD researcher at BITS Pilani. Long-document retrieval, exact unlearning, and latency-budgeted retriever selection. Previously Microsoft, ShareChat, and PowerUp Money.">
   <meta property="og:url" content="https://skcpda.github.io/">
   <meta property="og:image" content="https://skcpda.github.io/assets/grove-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,8 @@
     "sameAs": [
       "https://github.com/skcpda",
       "https://www.linkedin.com/in/priyank-jayraj-4380b4178/",
-      "https://orcid.org/0009-0001-1670-1931"
+      "https://orcid.org/0009-0001-1670-1931",
+      "https://scholar.google.com/citations?user=9L6XpCAAAAAJ&hl=en"
     ]
   }
   </script>
@@ -73,7 +74,7 @@
         <p class="lede">
           I work on information retrieval and applied machine learning.
           The systems I care about have to hold up under real constraints:
-          latency budgets, messy documents, and languages most models barely see.
+          latency budgets, long documents, and training runs that still have to forget.
         </p>
         <p class="byline">Pilani · CSIS · Ministry of Tribal Affairs</p>
         <p class="masthead-links">
@@ -93,30 +94,32 @@
         <h2>Current work</h2>
       </header>
       <p class="dek">
-        Welfare-scheme documents turned into retrieval systems that low-resource
-        language communities can actually use, culturally faithful, not just translated.
+        The papers on
+        <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>:
+        navigate a long document without summary trees, forget a curated training row exactly,
+        and pick retrievers inside a latency budget.
       </p>
       <div class="note-grid">
         <article class="note reveal">
-          <p class="note-kicker">Retrieval · graphs</p>
-          <h3><a href="https://github.com/skcpda/ctu-flowrag-poster" target="_blank" rel="noopener">CTU-FlowRAG</a></h3>
-          <p>Role-conditioned retrieval over typed sentence graphs, so a welfare document can be queried by the role the reader cares about.</p>
-          <p class="facts">0.82 nDCG@10 · 3,048 documents</p>
+          <p class="note-kicker">Long documents · retrieval</p>
+          <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">NavTree</a></h3>
+          <p>A leaves-only walk over a segment tree. The tree is the navigation scaffold; the reader only ever sees raw chunks.</p>
+          <p class="facts">Zero language-model calls at indexing</p>
         </article>
         <article class="note reveal reveal-2">
-          <p class="note-kicker">Culture · RAG</p>
-          <h3><a href="research.html">QCCAF</a></h3>
-          <p>Query-conditioned fusion that adds local cultural context before image prompts are written. Zero-shot across related languages.</p>
-          <p class="facts">0.93 nDCG@10 on Santali</p>
+          <p class="note-kicker">Unlearning · curation</p>
+          <h3><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Exact unlearning</a></h3>
+          <p>After near-duplicates have already been dropped, a deletion can admit a record that was excluded. The retention contract says which ones must still be kept.</p>
+          <p class="facts">13,056 exact deletion-step checks</p>
         </article>
         <article class="note reveal reveal-3">
           <p class="note-kicker">Latency · bandits</p>
-          <h3><a href="research.html">Bandit-Quota</a></h3>
+          <h3><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Bandit-Quota</a></h3>
           <p>A latency-budgeted contextual bandit for per-query retriever selection. Match an ensemble when you can afford it.</p>
-          <p class="facts">2.4x to 9.3x faster than full ensemble</p>
+          <p class="facts">2.4x to 9.3x faster than the full ensemble</p>
         </article>
       </div>
-      <p class="continue"><a href="research.html">The full research page</a> · <a href="publications.html">Accepted papers</a></p>
+      <p class="continue"><a href="research.html">The full research page</a> · <a href="publications.html">Publications</a></p>
     </section>
   </main>
 
@@ -132,6 +135,7 @@
         <a href="https://github.com/skcpda">GitHub</a>
         <a href="https://www.linkedin.com/in/priyank-jayraj-4380b4178/">LinkedIn</a>
         <a href="https://orcid.org/0009-0001-1670-1931">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a href="assets/Priyank_Jayraj_Resume.pdf">Resume</a>
       </p>
       <p class="copyright">© <span id="year">2026</span> Priyank Jayraj</p>
