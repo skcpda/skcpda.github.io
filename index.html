@@ -8,7 +8,7 @@
   <meta name="author" content="Priyank Jayraj">
   <link rel="canonical" href="https://skcpda.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#0b1c16">
+  <meta name="theme-color" content="#f3efe6">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Priyank Jayraj | Information Retrieval &amp; Applied ML">
   <meta property="og:description" content="PhD researcher at BITS Pilani. Long-document retrieval, exact unlearning, and latency-budgeted retriever selection. Previously Microsoft, ShareChat, and PowerUp Money.">
@@ -18,8 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=11">
-
+  <link rel="stylesheet" href="styles.css?v=12">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,8 +38,7 @@
   }
   </script>
 </head>
-<body class="is-home">
-  <canvas id="grove-dust" aria-hidden="true"></canvas>
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
@@ -51,82 +49,71 @@
       <nav id="site-nav" class="nav-links" aria-label="Primary">
         <a class="is-active" href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="experience.html">Work</a>
         <a href="also.html">Also</a>
-        <a class="nav-cta" href="assets/Priyank_Jayraj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="assets/Priyank_Jayraj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
     </div>
   </header>
 
-  <section class="cover" aria-label="Introduction">
-    <img class="cover-art" src="assets/grove-banner.jpg" alt="A dusk forest grove with kadamba trees, a river, and a peacock on the bank." width="1920" height="1080">
-    <div class="cover-shade"></div>
-    <div class="cover-copy">
-      <span class="pfp-frame cover-pfp">
-        <img class="pfp" src="assets/photo.jpg" alt="Priyank Jayraj" width="640" height="640">
-      </span>
-      <div class="cover-text">
-        <p class="kicker">A personal journal</p>
+  <main id="main" class="page">
+    <section class="intro">
+      <div>
+        <p class="kicker">PhD research scholar</p>
         <h1>Priyank Jayraj</h1>
-        <p class="role">PhD research scholar · BITS Pilani</p>
+        <p class="role">BITS Pilani · CSIS</p>
         <p class="lede">
           I work on information retrieval and applied machine learning.
           The systems I care about have to hold up under real constraints:
           latency budgets, long documents, and training runs that still have to forget.
         </p>
-        <p class="byline">Pilani · CSIS · Ministry of Tribal Affairs</p>
-        <p class="masthead-links">
-          <a href="about.html">About</a>
-          <a href="research.html">Research</a>
-          <a href="mailto:jairajpriyank@gmail.com">Email</a>
-          <a href="https://github.com/skcpda">GitHub</a>
-        </p>
+        <ul class="text-links">
+          <li><a href="mailto:jairajpriyank@gmail.com">Email</a></li>
+          <li><a href="https://github.com/skcpda">GitHub</a></li>
+          <li><a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
       </div>
-    </div>
-  </section>
+      <figure class="portrait">
+        <img class="portrait-ground" src="assets/grove-banner.jpg" alt="A dusk forest grove with kadamba trees, a river, and a peacock on the bank." width="1920" height="1080">
+        <img class="portrait-face" src="assets/photo.jpg" alt="Priyank Jayraj" width="640" height="640">
+      </figure>
+    </section>
 
-  <main id="main" class="journal journal--home">
-    <section class="entry">
-      <header class="entry-head">
-        <p class="idx">On the bench</p>
-        <h2>Current work</h2>
+    <section aria-labelledby="papers-heading">
+      <header class="section-head">
+        <h2 id="papers-heading">Papers</h2>
+        <a href="publications.html">All publications</a>
       </header>
-      <p class="dek">
-        The papers on
-        <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>:
-        navigate a long document without summary trees, forget a curated training row exactly,
-        and pick retrievers inside a latency budget.
-      </p>
-      <div class="note-grid">
-        <article class="note reveal">
-          <p class="note-kicker">Long documents · retrieval</p>
-          <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">NavTree</a></h3>
-          <p>A leaves-only walk over a segment tree. The tree is the navigation scaffold; the reader only ever sees raw chunks.</p>
-          <p class="facts">Zero language-model calls at indexing</p>
-        </article>
-        <article class="note reveal reveal-2">
-          <p class="note-kicker">Unlearning · curation</p>
-          <h3><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Exact unlearning</a></h3>
-          <p>After near-duplicates have already been dropped, a deletion can admit a record that was excluded. The retention contract says which ones must still be kept.</p>
-          <p class="facts">13,056 exact deletion-step checks</p>
-        </article>
-        <article class="note reveal reveal-3">
-          <p class="note-kicker">Latency · bandits</p>
-          <h3><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Bandit-Quota</a></h3>
-          <p>A latency-budgeted contextual bandit for per-query retriever selection. Match an ensemble when you can afford it.</p>
-          <p class="facts">2.4x to 9.3x faster than the full ensemble</p>
-        </article>
-      </div>
-      <p class="continue"><a href="research.html">The full research page</a> · <a href="publications.html">Publications</a></p>
+      <ol class="paper-list">
+        <li class="paper-row">
+          <p class="paper-kicker">CIKM 2026</p>
+          <div>
+            <h3><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Bandit-Quota</a></h3>
+            <p>A latency-budgeted contextual bandit that picks a subset of dense retrievers under a wall-clock cap. 2.4x to 9.3x faster than the full ensemble.</p>
+          </div>
+        </li>
+        <li class="paper-row">
+          <p class="paper-kicker">arXiv 2026</p>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Exact unlearning</a></h3>
+            <p>After near-duplicates have already been dropped, a deletion can admit a record that was excluded. The retention contract says which ones must still be kept.</p>
+          </div>
+        </li>
+        <li class="paper-row">
+          <p class="paper-kicker">arXiv 2026</p>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">NavTree</a></h3>
+            <p>A leaves-only walk over a segment tree. The tree is the navigation scaffold; the reader only ever sees raw chunks. Zero language-model calls at indexing.</p>
+          </div>
+        </li>
+      </ol>
     </section>
   </main>
 
-  <footer class="site-footer" id="contact">
-    <div class="footer-copy">
-      <p class="kicker">Get in touch</p>
-      <h2>Happy to talk research, internships, or a well-posed retrieval problem.</h2>
+  <footer class="site-footer">
+    <div class="footer-inner">
       <p>
         <a href="mailto:jairajpriyank@gmail.com">jairajpriyank@gmail.com</a><br>
         <a href="mailto:priyank.jayraj@pilani.bits-pilani.ac.in">priyank.jayraj@pilani.bits-pilani.ac.in</a>
@@ -138,9 +125,9 @@
         <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a href="assets/Priyank_Jayraj_Resume.pdf">Resume</a>
       </p>
-      <p class="copyright">© <span id="year">2026</span> Priyank Jayraj</p>
+      <p>© <span id="year">2026</span> Priyank Jayraj</p>
     </div>
   </footer>
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
