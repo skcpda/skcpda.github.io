@@ -82,4 +82,54 @@
     };
     tick();
   }
+
+  const lights = document.getElementById("cover-lights");
+  if (lights && lights.getContext && !reduce) {
+    const lctx = lights.getContext("2d");
+    const motes = Array.from({ length: 34 }, () => ({
+      x: Math.random() * 0.62,
+      y: Math.random(),
+      r: Math.random() * 2.2 + 1.1,
+      s: Math.random() * 0.00018 + 0.00005,
+      p: Math.random() * Math.PI * 2,
+      tw: Math.random() * 0.0016 + 0.0007,
+    }));
+
+    const sizeLights = () => {
+      const rect = lights.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      lights.width = Math.floor(rect.width * dpr);
+      lights.height = Math.floor(rect.height * dpr);
+    };
+    sizeLights();
+    window.addEventListener("resize", sizeLights, { passive: true });
+
+    const drawLights = (t) => {
+      const w = lights.width;
+      const h = lights.height;
+      lctx.clearRect(0, 0, w, h);
+      for (const m of motes) {
+        m.y -= m.s;
+        m.x += Math.sin(t * 0.00035 + m.p) * 0.00012;
+        if (m.y < -0.05) {
+          m.y = 1.05;
+          m.x = Math.random() * 0.58;
+        }
+        const pulse = 0.25 + 0.75 * (0.5 + 0.5 * Math.sin(t * m.tw + m.p));
+        const x = m.x * w;
+        const y = m.y * h;
+        const rad = m.r * 8 * (w / Math.max(lights.clientWidth, 1));
+        const g = lctx.createRadialGradient(x, y, 0, x, y, rad);
+        g.addColorStop(0, `rgba(255, 244, 214, ${0.9 * pulse})`);
+        g.addColorStop(0.22, `rgba(255, 196, 90, ${0.32 * pulse})`);
+        g.addColorStop(1, "rgba(255, 196, 90, 0)");
+        lctx.fillStyle = g;
+        lctx.beginPath();
+        lctx.arc(x, y, rad, 0, Math.PI * 2);
+        lctx.fill();
+      }
+      requestAnimationFrame(drawLights);
+    };
+    requestAnimationFrame(drawLights);
+  }
 })();

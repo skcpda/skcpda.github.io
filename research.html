@@ -46,15 +46,27 @@
         <h2>Research</h2>
       </header>
       <p class="dek reveal">
-        Three problems, each with a hard constraint.
+        Four problems, each with a hard constraint.
+        An oscillator you only observe through two of four channels.
         Long documents where flat retrieval clusters in one region.
         Training pipelines that drop near-duplicates and then have to forget a record exactly.
         Retriever ensembles that miss the latency budget if every expert runs.
         These are the recent papers on
         <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
       </p>
-      <div class="note-grid">
-      <article class="note reveal" id="navtree">
+      <div class="note-grid note-grid--four">
+      <article class="note reveal" id="oscillators">
+        <p class="note-kicker">Bandits · oscillators</p>
+        <h3><a href="https://arxiv.org/abs/2611.27492" target="_blank" rel="noopener">Learning unknown oscillators</a></h3>
+        <p>
+          Each round the learner sees only two of four reward channels.
+          Committing to one fitted oscillator lets its greedy choices expose a frequency error,
+          so the controller refits only when that check fails and otherwise holds the longest block it can afford.
+        </p>
+        <p class="facts">arXiv:2611.27492 · 49 fits instead of 1,023 · 4.69x faster on matched timings</p>
+        <p><a href="https://arxiv.org/abs/2611.27492" target="_blank" rel="noopener">Paper</a></p>
+      </article>
+      <article class="note reveal reveal-2" id="navtree">
         <p class="note-kicker">Long documents · retrieval</p>
         <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">NavTree</a></h3>
         <p>
