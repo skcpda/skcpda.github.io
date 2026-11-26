@@ -174,7 +174,7 @@ a:hover {
   height: 100%;
   object-fit: cover;
   object-position: 36% 48%;
-  filter: brightness(1.12) saturate(1.06);
+  filter: brightness(1.02) saturate(1.04);
   animation: kenburns 28s ease-in-out infinite alternate;
 }
 
@@ -191,8 +191,13 @@ a:hover {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(90deg, transparent 36%, rgba(255, 246, 220, 0.55) 100%);
-  mix-blend-mode: screen;
+  background: linear-gradient(
+    105deg,
+    rgba(8, 16, 12, 0) 0%,
+    rgba(8, 16, 12, 0) 34%,
+    rgba(8, 16, 12, 0.38) 56%,
+    rgba(8, 16, 12, 0.72) 100%
+  );
 }
 
 .cover-copy {
@@ -200,29 +205,33 @@ a:hover {
   position: absolute;
   right: max(1.6rem, calc((100% - var(--journal)) / 2));
   top: 50%;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 1.35rem 1.7rem;
-  align-items: center;
-  width: min(46vw, 40rem);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+  width: min(42vw, 36rem);
   max-width: calc(100% - 2.8rem);
   color: #f4ead3;
   transform: translateY(-50%);
 }
 
+.cover-identity {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 0.35rem 1.15rem;
+  align-items: center;
+}
+
 .cover .cover-pfp {
-  width: 232px;
-  height: 232px;
-  padding: 4px;
+  width: 148px;
+  height: 148px;
+  padding: 3px;
   background: #fffaf0;
-  box-shadow:
-    0 0 0 1px var(--gold),
-    0 0 42px rgba(255, 236, 190, 0.7),
-    0 16px 36px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px var(--gold), 0 12px 26px rgba(0, 0, 0, 0.4);
 }
 
 .cover .cover-pfp .pfp {
-  filter: brightness(1.22) contrast(1.08) saturate(1.08);
+  filter: brightness(1.08) contrast(1.04);
 }
 
 .sound-toggle {
@@ -282,7 +291,7 @@ a:hover {
 .cover h1 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(3.2rem, 5.6vw, 5.6rem);
+  font-size: clamp(2.7rem, 4vw, 4.15rem);
   font-weight: 600;
   line-height: 0.92;
   color: #fff8ec;
@@ -757,14 +766,17 @@ blockquote {
     top: auto;
     bottom: 1.25rem;
     width: auto;
-    grid-template-columns: 1fr;
     max-width: none;
     transform: none;
   }
 
+  .cover-identity {
+    grid-template-columns: 108px minmax(0, 1fr);
+  }
+
   .cover .cover-pfp {
-    width: 132px;
-    height: 132px;
+    width: 108px;
+    height: 108px;
   }
 
   .sound-toggle {
