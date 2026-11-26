@@ -174,13 +174,10 @@ a:hover {
   height: 100%;
   object-fit: cover;
   object-position: 36% 48%;
-  animation:
-    kenburns 28s ease-in-out infinite alternate,
-    grove-bright 9s ease-in-out infinite;
+  filter: brightness(1.12) saturate(1.06);
+  animation: kenburns 28s ease-in-out infinite alternate;
 }
 
-.cover-glow,
-.cover-beams,
 .cover-lights {
   position: absolute;
   inset: 0;
@@ -190,66 +187,92 @@ a:hover {
   pointer-events: none;
 }
 
-.cover-glow {
-  background:
-    radial-gradient(ellipse 50% 64% at 24% 34%, rgba(255, 226, 160, 0.72), transparent 64%),
-    radial-gradient(ellipse 28% 34% at 12% 72%, rgba(255, 176, 80, 0.5), transparent 72%);
-  mix-blend-mode: screen;
-  animation: grove-breathe 7.5s ease-in-out infinite;
-  -webkit-mask-image: linear-gradient(100deg, #000 0%, #000 48%, transparent 74%);
-  mask-image: linear-gradient(100deg, #000 0%, #000 48%, transparent 74%);
-}
-
-.cover-glow::after {
-  content: "";
-  position: absolute;
-  width: 34%;
-  height: 42%;
-  left: 6%;
-  top: 16%;
-  background: radial-gradient(circle, rgba(255, 248, 220, 0.85), transparent 68%);
-  filter: blur(10px);
-  animation: light-drift 16s ease-in-out infinite alternate;
-}
-
-.cover-beams {
-  background:
-    linear-gradient(112deg, transparent 6%, rgba(255, 232, 170, 0.34) 14%, transparent 24%),
-    linear-gradient(104deg, transparent 30%, rgba(255, 214, 130, 0.22) 38%, transparent 48%),
-    linear-gradient(118deg, transparent 50%, rgba(255, 244, 200, 0.26) 57%, transparent 66%);
-  mix-blend-mode: screen;
-  animation: beams-drift 18s ease-in-out infinite alternate;
-  -webkit-mask-image: linear-gradient(100deg, #000 0%, #000 40%, transparent 66%);
-  mask-image: linear-gradient(100deg, #000 0%, #000 40%, transparent 66%);
-}
-
 .cover-shade {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background:
-    linear-gradient(100deg, rgba(8, 16, 12, 0) 0%, rgba(8, 16, 12, 0.04) 34%, rgba(8, 16, 12, 0.58) 64%, rgba(8, 16, 12, 0.8) 100%),
-    linear-gradient(to top, rgba(8, 16, 12, 0.58) 0%, rgba(8, 16, 12, 0.12) 40%, transparent 60%);
+  background: linear-gradient(90deg, transparent 36%, rgba(255, 246, 220, 0.55) 100%);
+  mix-blend-mode: screen;
 }
 
 .cover-copy {
   z-index: 4;
   position: absolute;
-  right: max(1.4rem, calc((100% - var(--journal)) / 2));
-  bottom: 9%;
+  right: max(1.6rem, calc((100% - var(--journal)) / 2));
+  top: 50%;
   display: grid;
-  grid-template-columns: auto minmax(0, 34rem);
-  gap: 1.2rem 1.4rem;
-  align-items: end;
-  max-width: min(46rem, calc(100% - 2.4rem));
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.35rem 1.7rem;
+  align-items: center;
+  width: min(46vw, 40rem);
+  max-width: calc(100% - 2.8rem);
   color: #f4ead3;
+  transform: translateY(-50%);
 }
 
-.cover-pfp {
-  width: 108px;
-  height: 108px;
-  background: rgba(11, 28, 22, 0.35);
-  box-shadow: 0 0 0 1px var(--gold), 0 10px 28px rgba(0, 0, 0, 0.35);
+.cover .cover-pfp {
+  width: 232px;
+  height: 232px;
+  padding: 4px;
+  background: #fffaf0;
+  box-shadow:
+    0 0 0 1px var(--gold),
+    0 0 42px rgba(255, 236, 190, 0.7),
+    0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.cover .cover-pfp .pfp {
+  filter: brightness(1.22) contrast(1.08) saturate(1.08);
+}
+
+.sound-toggle {
+  position: fixed;
+  z-index: 12;
+  left: 1.15rem;
+  bottom: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.75rem 0.38rem 0.55rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: rgba(11, 28, 22, 0.62);
+  color: #f4ead3;
+  font-family: var(--ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sound-toggle[aria-pressed="true"] {
+  background: var(--gold);
+  color: var(--night);
+}
+
+.sound-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 11px;
+}
+
+.sound-bars span {
+  width: 2px;
+  height: 4px;
+  background: currentColor;
+}
+
+.sound-toggle[aria-pressed="true"] .sound-bars span:nth-child(1) {
+  animation: sound-eq 0.7s ease-in-out infinite;
+}
+
+.sound-toggle[aria-pressed="true"] .sound-bars span:nth-child(2) {
+  animation: sound-eq 0.7s ease-in-out 0.15s infinite;
+}
+
+.sound-toggle[aria-pressed="true"] .sound-bars span:nth-child(3) {
+  animation: sound-eq 0.7s ease-in-out 0.3s infinite;
 }
 
 .cover .kicker {
@@ -259,23 +282,31 @@ a:hover {
 .cover h1 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-size: clamp(3.2rem, 5.6vw, 5.6rem);
   font-weight: 600;
-  line-height: 0.95;
-  color: #f7efe0;
-  text-shadow: 0 2px 24px rgba(8, 16, 12, 0.45);
+  line-height: 0.92;
+  color: #fff8ec;
+  text-shadow: 0 2px 18px rgba(8, 16, 12, 0.72);
+}
+
+.cover .kicker,
+.cover .role,
+.cover .byline,
+.cover .lede {
+  text-shadow: 0 1px 12px rgba(8, 16, 12, 0.7);
 }
 
 .cover .role,
 .cover .byline {
-  color: #d8c9a6;
+  color: #f3e6c4;
+  font-size: 0.95rem;
 }
 
 .cover .lede {
-  margin: 0.85rem 0 0.7rem;
-  max-width: 34rem;
-  color: #efe6d2;
-  font-size: 1.12rem;
+  margin: 0.95rem 0 0.8rem;
+  max-width: none;
+  color: #fff6e8;
+  font-size: 1.32rem;
   line-height: 1.5;
 }
 
@@ -723,14 +754,28 @@ blockquote {
   .cover-copy {
     left: 1rem;
     right: 1rem;
+    top: auto;
     bottom: 1.25rem;
+    width: auto;
     grid-template-columns: 1fr;
     max-width: none;
+    transform: none;
   }
 
-  .cover-pfp {
-    width: 84px;
-    height: 84px;
+  .cover .cover-pfp {
+    width: 132px;
+    height: 132px;
+  }
+
+  .sound-toggle {
+    top: calc(var(--header) + 0.45rem);
+    right: 1rem;
+    bottom: auto;
+    left: auto;
+  }
+
+  .cover h1 {
+    font-size: clamp(2.6rem, 12vw, 3.4rem);
   }
 
   .cover .lede {
@@ -739,11 +784,10 @@ blockquote {
 
   .cover-shade {
     background:
-      linear-gradient(to top, rgba(8, 16, 12, 0.88) 0%, rgba(8, 16, 12, 0.42) 48%, rgba(8, 16, 12, 0.08) 100%);
+      linear-gradient(to top, rgba(8, 16, 12, 0.55) 0%, rgba(8, 16, 12, 0.16) 42%, transparent 70%);
+    mix-blend-mode: normal;
   }
 
-  .cover-glow,
-  .cover-beams,
   .cover-lights {
     -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 64%);
     mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 64%);
@@ -1133,6 +1177,11 @@ blockquote {
 .reveal-4 { animation-delay: 0.3s; }
 .reveal-5 { animation-delay: 0.4s; }
 
+@keyframes sound-eq {
+  0%, 100% { height: 3px; }
+  50% { height: 11px; }
+}
+
 @keyframes folio-sheen {
   from { transform: translateX(-130%); }
   to { transform: translateX(130%); }
@@ -1221,9 +1270,7 @@ blockquote {
 
   .hero img,
   .cover-art,
-  .cover-glow,
-  .cover-glow::after,
-  .cover-beams,
+  .sound-bars span,
   .folio-shell,
   .folio-shell::before,
   .folio-index,

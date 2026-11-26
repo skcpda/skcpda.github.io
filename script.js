@@ -25,6 +25,35 @@
     });
   });
 
+  const audio = document.getElementById("grove-audio");
+  const sound = document.querySelector(".sound-toggle");
+  if (audio && sound) {
+    audio.volume = 0.55;
+    let userPaused = false;
+    const label = sound.querySelector(".sound-label");
+    const setState = (on) => {
+      sound.setAttribute("aria-pressed", on ? "true" : "false");
+      sound.setAttribute("aria-label", on ? "Pause the flute" : "Play the flute");
+      if (label) label.textContent = on ? "Playing" : "Listen";
+    };
+    const start = () => {
+      if (userPaused || !audio.paused) return;
+      audio.play().then(() => setState(true)).catch(() => setState(false));
+    };
+    sound.addEventListener("click", () => {
+      if (audio.paused) {
+        userPaused = false;
+        start();
+      } else {
+        userPaused = true;
+        audio.pause();
+        setState(false);
+      }
+    });
+    start();
+    document.addEventListener("pointerdown", start);
+  }
+
   document.querySelectorAll(".abstract-toggle").forEach((button) => {
     button.addEventListener("click", () => {
       const folio = button.closest(".folio");
