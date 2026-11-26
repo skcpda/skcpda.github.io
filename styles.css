@@ -185,6 +185,8 @@ a:hover {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  -webkit-mask-image: linear-gradient(100deg, #000 0%, #000 34%, transparent 56%);
+  mask-image: linear-gradient(100deg, #000 0%, #000 34%, transparent 56%);
 }
 
 .cover-shade {
@@ -192,11 +194,12 @@ a:hover {
   inset: 0;
   z-index: 2;
   background: linear-gradient(
-    105deg,
+    100deg,
     rgba(8, 16, 12, 0) 0%,
-    rgba(8, 16, 12, 0) 34%,
-    rgba(8, 16, 12, 0.38) 56%,
-    rgba(8, 16, 12, 0.72) 100%
+    rgba(8, 16, 12, 0.2) 18%,
+    rgba(8, 16, 12, 0.78) 42%,
+    rgba(8, 16, 12, 0.94) 68%,
+    rgba(8, 16, 12, 0.96) 100%
   );
 }
 
@@ -209,25 +212,36 @@ a:hover {
   flex-direction: column;
   align-items: stretch;
   gap: 0.85rem;
-  width: min(42vw, 36rem);
+  width: min(36rem, calc(100% - 3rem));
   max-width: calc(100% - 2.8rem);
-  color: #f4ead3;
+  color: #f7efe0;
   transform: translateY(-50%);
+}
+
+.cover-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1.8rem -1.6rem -1.5rem -2rem;
+  background: radial-gradient(120% 100% at 72% 42%, rgba(6, 12, 10, 0.55), transparent 72%);
+  pointer-events: none;
 }
 
 .cover-identity {
   display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
-  gap: 0.35rem 1.15rem;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 0.2rem 1.05rem;
   align-items: center;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.55);
 }
 
 .cover .cover-pfp {
-  width: 148px;
-  height: 148px;
+  width: 118px;
+  height: 118px;
   padding: 3px;
   background: #fffaf0;
-  box-shadow: 0 0 0 1px var(--gold), 0 12px 26px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 1px var(--gold), 0 10px 22px rgba(0, 0, 0, 0.45);
 }
 
 .cover .cover-pfp .pfp {
@@ -291,11 +305,11 @@ a:hover {
 .cover h1 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.7rem, 4vw, 4.15rem);
+  font-size: clamp(2.5rem, 3.5vw, 3.55rem);
   font-weight: 600;
-  line-height: 0.92;
+  line-height: 0.95;
   color: #fff8ec;
-  text-shadow: 0 2px 18px rgba(8, 16, 12, 0.72);
+  text-shadow: 0 2px 16px rgba(8, 16, 12, 0.85);
 }
 
 .cover .kicker,
@@ -312,11 +326,11 @@ a:hover {
 }
 
 .cover .lede {
-  margin: 0.95rem 0 0.8rem;
-  max-width: none;
-  color: #fff6e8;
-  font-size: 1.32rem;
-  line-height: 1.5;
+  margin: 0.15rem 0 0;
+  max-width: 34rem;
+  color: #f7efe0;
+  font-size: 1.08rem;
+  line-height: 1.6;
 }
 
 .cover .masthead-links a {
@@ -796,13 +810,12 @@ blockquote {
 
   .cover-shade {
     background:
-      linear-gradient(to top, rgba(8, 16, 12, 0.55) 0%, rgba(8, 16, 12, 0.16) 42%, transparent 70%);
-    mix-blend-mode: normal;
+      linear-gradient(to top, rgba(8, 16, 12, 0.94) 0%, rgba(8, 16, 12, 0.82) 46%, rgba(8, 16, 12, 0.28) 72%, transparent 100%);
   }
 
   .cover-lights {
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 64%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 64%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 28%, transparent 48%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 28%, transparent 48%);
   }
 
   .folio-shell {
