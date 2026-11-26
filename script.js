@@ -25,6 +25,17 @@
     });
   });
 
+  document.querySelectorAll(".abstract-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const folio = button.closest(".folio");
+      const open = folio?.classList.toggle("is-open");
+      const panel = document.getElementById(button.getAttribute("aria-controls"));
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      button.textContent = open ? "Hide abstract" : "Read abstract";
+      panel?.setAttribute("aria-hidden", open ? "false" : "true");
+    });
+  });
+
   if (!reduce && "IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {

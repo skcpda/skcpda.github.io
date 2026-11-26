@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
   <canvas id="grove-dust" aria-hidden="true"></canvas>
@@ -48,71 +48,113 @@
       <p class="dek reveal">
         The five papers on
         <a href="https://scholar.google.com/citations?user=9L6XpCAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+        Open a card to read the abstract.
       </p>
-      <article class="pub-card reveal">
-        <p class="pub-venue">arXiv · 2026</p>
-        <h3><a href="https://arxiv.org/abs/2611.27492" target="_blank" rel="noopener">Learning Unknown Oscillators From Bandit Feedback</a></h3>
-        <p class="pub-authors">
-          Priyank Jayraj,
-          <a href="https://www.bits-pilani.ac.in/pilani/poonam-goyal/" target="_blank" rel="noopener">Poonam Goyal</a>,
-          <a href="https://www.bits-pilani.ac.in/pilani/navneet-goyal/" target="_blank" rel="noopener">Navneet Goyal</a>
-        </p>
-        <p class="pub-place">arXiv:2611.27492.</p>
-        <div class="btn-row">
-          <a class="btn" href="https://arxiv.org/abs/2611.27492" target="_blank" rel="noopener">arXiv</a>
-          <a class="btn" href="https://arxiv.org/pdf/2611.27492" target="_blank" rel="noopener">PDF</a>
+      <div class="folio-list">
+      <article class="folio reveal">
+        <div class="folio-shell">
+          <p class="folio-index" aria-hidden="true">01</p>
+          <p class="pub-venue">arXiv · 2026</p>
+          <h3><a href="https://arxiv.org/abs/2611.27492" target="_blank" rel="noopener">Learning Unknown Oscillators From Bandit Feedback</a></h3>
+          <p class="pub-authors">
+            Priyank Jayraj,
+            <a href="https://www.bits-pilani.ac.in/pilani/poonam-goyal/" target="_blank" rel="noopener">Poonam Goyal</a>,
+            <a href="https://www.bits-pilani.ac.in/pilani/navneet-goyal/" target="_blank" rel="noopener">Navneet Goyal</a>
+          </p>
+          <p class="pub-place">arXiv:2611.27492.</p>
+          <div class="btn-row">
+            <button type="button" class="btn abstract-toggle" aria-expanded="false" aria-controls="abs-osc">Read abstract</button>
+            <a class="btn" href="https://arxiv.org/abs/2611.27492" target="_blank" rel="noopener">arXiv</a>
+            <a class="btn" href="https://arxiv.org/pdf/2611.27492" target="_blank" rel="noopener">PDF</a>
+          </div>
+          <div class="abstract" id="abs-osc" aria-hidden="true">
+            <div class="abstract-inner">
+              <p>We study semi-bandits driven by unknown oscillators. Each round, a learner selects two of four reward channels and observes their individual rewards. Frequency errors change future reward rankings and the resulting measurements. We show when committing to one fitted oscillator lets its greedy choices expose prediction errors. Our controller bounds reward loss (regret) over a continuous confidence set and holds the longest block within budget. An online regression policy gathers observations when the check fails. Regret grows at a square-root rate, up to logarithmic factors, across all frequencies and extends to two competing oscillators. On 96 fresh synthetic instances, checked commitment uses 49 fits instead of 1,023, with 1.5% higher mean regret than fitting every round. Matched isolated timings give a 4.69-fold speedup. The confidence sets also certify trajectory regret.</p>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="pub-card reveal reveal-2">
-        <p class="pub-venue">CIKM 2026</p>
-        <h3><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Bandit-Quota: Latency-Budgeted Multi-Retriever Selection via Contextual Thompson Sampling</a></h3>
-        <p class="pub-authors">
-          Priyank Jayraj,
-          <a href="https://www.bits-pilani.ac.in/pilani/poonam-goyal/" target="_blank" rel="noopener">Poonam Goyal</a>,
-          <a href="https://www.bits-pilani.ac.in/pilani/navneet-goyal/" target="_blank" rel="noopener">Navneet Goyal</a>
-        </p>
-        <p class="pub-place">Proceedings of the 35th ACM International Conference on Information and Knowledge Management, pp. 7256–7260.</p>
-        <div class="btn-row">
-          <a class="btn" href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">DOI</a>
-          <a class="btn" href="https://github.com/skcpda/bandit-quota">Code</a>
+      <article class="folio reveal reveal-2">
+        <div class="folio-shell">
+          <p class="folio-index" aria-hidden="true">02</p>
+          <p class="pub-venue">CIKM 2026</p>
+          <h3><a href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">Bandit-Quota: Latency-Budgeted Multi-Retriever Selection via Contextual Thompson Sampling</a></h3>
+          <p class="pub-authors">
+            Priyank Jayraj,
+            <a href="https://www.bits-pilani.ac.in/pilani/poonam-goyal/" target="_blank" rel="noopener">Poonam Goyal</a>,
+            <a href="https://www.bits-pilani.ac.in/pilani/navneet-goyal/" target="_blank" rel="noopener">Navneet Goyal</a>
+          </p>
+          <p class="pub-place">Proceedings of the 35th ACM International Conference on Information and Knowledge Management, pp. 7256–7260.</p>
+          <div class="btn-row">
+            <button type="button" class="btn abstract-toggle" aria-expanded="false" aria-controls="abs-bandit">Read abstract</button>
+            <a class="btn" href="https://doi.org/10.1145/3799682.3839855" target="_blank" rel="noopener">DOI</a>
+            <a class="btn" href="https://github.com/skcpda/bandit-quota">Code</a>
+          </div>
+          <div class="abstract" id="abs-bandit" aria-hidden="true">
+            <div class="abstract-inner">
+              <p>Dense-retriever ensembles improve ranking quality but invoke every expert per query, routinely violating production latency SLAs. We present Bandit-Quota, a training-free, per-query selector that picks a budgeted subset of dense retrievers under a strict wall-clock cap. We cast multi-retriever selection as a Knapsack-constrained contextual bandit: a 16-dimensional neural–linear query sketch (PCA-projected bert-tiny [CLS], about 3 ms on CPU) feeds Linear Thompson Sampling posteriors, and a Lagrangian utility trades expected post-reranking quality against estimated per-arm latency, with a Jaccard coverage bonus that suppresses redundant experts. A budget-feasible greedy constructor resolves the per-query knapsack online, and a cached Reciprocal-Rank-Fusion fallback protects tail latency. Across seven BEIR collections spanning biomedical, finance, scientific and argumentative domains, Bandit-Quota reduces end-to-end latency by 2.4× to 9.3× over a 10-arm full ensemble, matches or improves nDCG@10 and MRR@10 on six of seven datasets, and outperforms a matched-capacity supervised router on all seven by adapting online to test-time query-distribution shifts. The policy exposes explicit operator knobs (B, M, λ) for the quality–latency trade-off with no retraining.</p>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="pub-card reveal reveal-3">
-        <p class="pub-venue">arXiv · 2026</p>
-        <h3><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Exact Unlearning After Data Curation</a></h3>
-        <p class="pub-authors">
-          Priyank Jayraj,
-          Devanshu Sahoo,
-          Uday Mittal
-        </p>
-        <p class="pub-place">arXiv:2610.33426.</p>
-        <div class="btn-row">
-          <a class="btn" href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">arXiv</a>
-          <a class="btn" href="https://arxiv.org/pdf/2610.33426" target="_blank" rel="noopener">PDF</a>
+      <article class="folio reveal reveal-3">
+        <div class="folio-shell">
+          <p class="folio-index" aria-hidden="true">03</p>
+          <p class="pub-venue">arXiv · 2026</p>
+          <h3><a href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">Exact Unlearning After Data Curation</a></h3>
+          <p class="pub-authors">
+            Priyank Jayraj,
+            Devanshu Sahoo,
+            Uday Mittal
+          </p>
+          <p class="pub-place">arXiv:2610.33426.</p>
+          <div class="btn-row">
+            <button type="button" class="btn abstract-toggle" aria-expanded="false" aria-controls="abs-unlearn">Read abstract</button>
+            <a class="btn" href="https://arxiv.org/abs/2610.33426" target="_blank" rel="noopener">arXiv</a>
+            <a class="btn" href="https://arxiv.org/pdf/2610.33426" target="_blank" rel="noopener">PDF</a>
+          </div>
+          <div class="abstract" id="abs-unlearn" aria-hidden="true">
+            <div class="abstract-inner">
+              <p>Training pipelines often remove similar examples before fitting a model. Deleting a raw record can change that selection and admit an example that was excluded before. What must a service retain to reproduce training after such requests? We answer this question for a fixed rule in which earlier similar records block later ones. A limit on the total number of future deletions identifies exactly which records can still enter training. We use this boundary to build a summary of training statistics that can be repaired exactly after repeated deletions. The repaired summary is the same as rebuilding it on the surviving data with the remaining budget. We also construct finite-precision features for ridge regression, a linear learner with a penalty on coefficient size. With exact rational outputs, allowing one more deletion changes the required private information. It rises from zero to every private feature sign in the excluded candidates. An encoding attains this conditional private-information minimum on the constructed family throughout a sequence of requests. On 1,001 AskUbuntu development records, deleting an initially excluded record admits another record at 13 of 51 fixed similarity cutoffs. Exact membership repair passes 13,056 deletion-step checks. Two model-based semantic calibrations fail their fixed criteria, so the downstream task study is not run. The central result is a retention contract: the future deletions a service promises to support determine which excluded data can still be needed.</p>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="pub-card reveal reveal-4">
-        <p class="pub-venue">arXiv · 2026</p>
-        <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">Tree Navigation Without LLM Summaries: A Matched-Cost Study of Hierarchical Retrieval for Long-Document QA</a></h3>
-        <p class="pub-authors">
-          Priyank Jayraj,
-          <a href="https://www.bits-pilani.ac.in/pilani/poonam-goyal/" target="_blank" rel="noopener">Poonam Goyal</a>,
-          <a href="https://www.bits-pilani.ac.in/pilani/navneet-goyal/" target="_blank" rel="noopener">Navneet Goyal</a>
-        </p>
-        <p class="pub-place">arXiv:2610.06902.</p>
-        <div class="btn-row">
-          <a class="btn" href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">arXiv</a>
-          <a class="btn" href="https://arxiv.org/pdf/2610.06902" target="_blank" rel="noopener">PDF</a>
+      <article class="folio reveal reveal-4">
+        <div class="folio-shell">
+          <p class="folio-index" aria-hidden="true">04</p>
+          <p class="pub-venue">arXiv · 2026</p>
+          <h3><a href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">Tree Navigation Without LLM Summaries: A Matched-Cost Study of Hierarchical Retrieval for Long-Document QA</a></h3>
+          <p class="pub-authors">
+            Priyank Jayraj,
+            <a href="https://www.bits-pilani.ac.in/pilani/poonam-goyal/" target="_blank" rel="noopener">Poonam Goyal</a>,
+            <a href="https://www.bits-pilani.ac.in/pilani/navneet-goyal/" target="_blank" rel="noopener">Navneet Goyal</a>
+          </p>
+          <p class="pub-place">arXiv:2610.06902.</p>
+          <div class="btn-row">
+            <button type="button" class="btn abstract-toggle" aria-expanded="false" aria-controls="abs-nav">Read abstract</button>
+            <a class="btn" href="https://arxiv.org/abs/2610.06902" target="_blank" rel="noopener">arXiv</a>
+            <a class="btn" href="https://arxiv.org/pdf/2610.06902" target="_blank" rel="noopener">PDF</a>
+          </div>
+          <div class="abstract" id="abs-nav" aria-hidden="true">
+            <div class="abstract-inner">
+              <p>Retrieval-augmented generation grounds language models in external context, but for long documents flat top-k retrieval can cluster on a single region and miss complementary evidence. RAPTOR-style summary trees address this by recursively clustering chunks and using a language model to summarize each cluster at indexing time, then ranking summary nodes alongside raw chunks at query time. We show the main benefit of summary trees in long-document QA can come from navigation rather than the generated summary content. We introduce NavTree, a leaves-only retriever that builds a deterministic balanced segment tree over chunks (zero language-model calls at indexing) and uses the tree purely as a navigation scaffold: a hybrid lexical-and-dense frontier walk, anchored on top retrieved leaves, descends from the root and emits only leaf chunks to the reader. On a matched-cost evaluation against flat retrievers and an extractive re-implementation of RAPTOR, NavTree is the strongest matched-cost hierarchical retriever in our evaluated grid and ties the strongest flat baseline. On long-document multi-hop QA, it is the only hierarchical method that significantly beats BM25 on a class-vs-class basis, corroborated by a reader-free retrieval-recall check. A matched-reader replication of the published abstractive RAPTOR variant, given strong cluster summaries, still loses to NavTree at every multi-chunk budget, at zero indexing cost. The ranking carries across stronger and open-weight readers, a stronger encoder, and a full factorial that isolates leaves-only emission as the structural lever.</p>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="pub-card reveal reveal-4">
-        <p class="pub-venue">2018</p>
-        <h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=9L6XpCAAAAAJ&amp;citation_for_view=9L6XpCAAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">Comparative Studies of Series and Parallel Analysis of 1D Finite Element Problem</a></h3>
-        <p class="pub-place">2018.</p>
-        <div class="btn-row">
-          <a class="btn" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=9L6XpCAAAAAJ&amp;citation_for_view=9L6XpCAAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">Google Scholar</a>
+      <article class="folio reveal reveal-5">
+        <div class="folio-shell">
+          <p class="folio-index" aria-hidden="true">05</p>
+          <p class="pub-venue">2018</p>
+          <h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=9L6XpCAAAAAJ&amp;citation_for_view=9L6XpCAAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">Comparative Studies of Series and Parallel Analysis of 1D Finite Element Problem</a></h3>
+          <p class="pub-place">2018. Google Scholar does not list an abstract for this record.</p>
+          <div class="btn-row">
+            <a class="btn" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=9L6XpCAAAAAJ&amp;citation_for_view=9L6XpCAAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
         </div>
       </article>
+      </div>
       <p class="continue"><a href="experience.html">Next: Work →</a></p>
     </section>
   </main>
@@ -134,6 +176,6 @@
       <p class="copyright">© <span id="year">2026</span> Priyank Jayraj</p>
     </div>
   </footer>
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=14"></script>
 </body>
 </html>
